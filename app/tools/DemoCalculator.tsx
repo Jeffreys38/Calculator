@@ -57,6 +57,10 @@ export default function DemoCalculator() {
 
         if (isShowParams) {
             if (/[0-9]/g.test(exp)) {
+                if (params.length > 12) {
+                    alert("This number is so big")
+                    return;
+                }
                 setParams(params + exp);
             }
             return;
@@ -136,6 +140,7 @@ export default function DemoCalculator() {
             setExpressions([new CommonOperators("")]);
             setCursorPosition(0);
             setResult("0");
+            setParams("");
             setShowParams(!isShowParams)
             return;
         }
@@ -225,13 +230,23 @@ export default function DemoCalculator() {
                             {`\\[${renderingExpression()}\\]`}
                         </MathJaxSvg>
                     </ScrollView>
-                    <View style={styles.group}>
-                        <Text style={styles.subText}>
+                    <View style={[
+                        styles.group,
+                    ]}>
+                        <Text style={[
+                            styles.subText,
+                            {
+                                flex: 1,
+                                fontSize: (params?.length > 5) ? 20 : 23,
+                                textAlign: 'left'
+                            }
+                        ]}>
                             {(isShowParams) ? "x = " + params : null}
                         </Text>
                         <Text style={[
                             styles.mainText,
                             {
+                                flex: 3,
                                 fontSize: (result?.toString().length > 10) ? 25 : 40,
                                 marginBottom: 23,
                                 color: (isDark) ? 'white' : 'black'
