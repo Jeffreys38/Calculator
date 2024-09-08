@@ -1,4 +1,4 @@
-import {ExpressionTemplate} from "@/interfaces/Expression";
+import {ExpressionTemplate, Scope} from "@/interfaces/Expression";
 
 export default class CommonOperators extends ExpressionTemplate {
     cursorIndex: number;
@@ -8,7 +8,7 @@ export default class CommonOperators extends ExpressionTemplate {
         this.cursorIndex = 0; // Indicates the cursor position, 0 means before the operator, 1 means after.
     }
 
-    calculate(): string {
+    calculate(scope?: Scope): string {
         return this.rendering();
     }
 

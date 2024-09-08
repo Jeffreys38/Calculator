@@ -34,7 +34,7 @@ export default function DemoCalculator() {
     }, []);
 
     useEffect(() => {
-        if (expressions[0].getLatexString().length == 0) {
+        if (expressions[0]?.getLatexString().length == 0) {
             setResult(0);
         }
     }, [expressions]);
@@ -132,6 +132,13 @@ export default function DemoCalculator() {
     };
 
     const deleteExpression = (): void => {
+        if (isShowParams) {
+            setExpressions([new CommonOperators("")]);
+            setCursorPosition(0);
+            setResult("0");
+            setShowParams(!isShowParams)
+            return;
+        }
         const currentExpression = expressions[cursorPosition];
 
         if (
@@ -225,7 +232,7 @@ export default function DemoCalculator() {
                         <Text style={[
                             styles.mainText,
                             {
-                                fontSize: (result.toString().length > 10) ? 25 : 40,
+                                fontSize: (result?.toString().length > 10) ? 25 : 40,
                                 marginBottom: 23,
                                 color: (isDark) ? 'white' : 'black'
                             }
