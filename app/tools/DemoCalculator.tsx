@@ -39,6 +39,11 @@ export default function DemoCalculator() {
         }
     }, [expressions]);
 
+    useEffect(() => {
+        if (isShowParams === false)
+            setParams("");
+    }, [isShowParams]);
+
 
     const autoScroll = () => {
         scrollRef.current?.scrollTo({ x: 2500, y: 0, animated: true });
