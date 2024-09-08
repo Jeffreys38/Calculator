@@ -5,6 +5,7 @@ type ButtonConfig = {
     textColor: StyleProp<TextStyle>,
     btnStyle: StyleProp<TextStyle>,
     hint?: string,
+    hintColor?: string,
     onPress: () => void
 }
 
@@ -16,7 +17,7 @@ export function Button(buttonConfig: ButtonConfig) {
         ]} onPress={buttonConfig.onPress}>
             <Text style={[
                 {
-                    color: 'red',
+                    color: buttonConfig.hintColor,
                     position: 'absolute',
                     top: -15
                 }

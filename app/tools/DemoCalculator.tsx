@@ -434,6 +434,7 @@ export default function DemoCalculator() {
                             value={"="}
                             onPress={evaluateExpression}
                             hint={"Solve"}
+                            hintColor={(isDark) ? 'white' : '#fe5708'}
                         />
                     </View>
                 </View>
