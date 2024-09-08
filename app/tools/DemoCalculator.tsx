@@ -142,7 +142,16 @@ export default function DemoCalculator() {
             const updatedExpressions = expressions.filter((_, index) => index !== cursorPosition);
             setExpressions(updatedExpressions);
             setCursorPosition(Math.max(0, cursorPosition - 1));
-        } else {
+        } else if(
+            currentExpression instanceof RootN &&
+            currentExpression.index === "☐" &&
+            currentExpression.radicand === "☐"
+        ) {
+            const updatedExpressions = expressions.filter((_, index) => index !== cursorPosition);
+            setExpressions(updatedExpressions);
+            setCursorPosition(Math.max(0, cursorPosition - 1));
+        }
+        else {
             currentExpression.deleteExp();
             setExpressions([...expressions]);
         }
@@ -163,9 +172,10 @@ export default function DemoCalculator() {
                 setParams("")
             }
 
-            let fullExpression = expressions.map(expr => expr.calculate()).join('');
+
+            let fullExpression = expressions.map(expr => expr.calculate(scope)).join('');
             fullExpression.replace(/([+*/-])/g, ' $1 ');
-            const result =  Math.round(math.evaluate(fullExpression, scope) * 10**4) / 10**4;
+            const result =  math.evaluate(fullExpression, scope);
 
             setResult(result);
         } catch (error) {
@@ -359,54 +369,60 @@ export default function DemoCalculator() {
                             onPress={() => { insertAtCursor(CommonOperations.Subtract) }}
                         />
                     </View>
-                    <View style={styles.group}>
+                    <View style={[styles.group, { marginTop: -17}]}>
+                        <View style={[
+                            styles.group,
+                            {
+                                flexDirection: 'column',
+                                alignItems: 'stretch',
+                                width: '74%'
+                            }
+                        ]}>
+                           <View style={styles.group}>
+                               <Button
+                                   textColor={styles.textBtn}
+                                   btnStyle={[styles.button]}
+                                   value={"1"}
+                                   onPress={() => { insertAtCursor('1') }}
+                               />
+                               <Button
+                                   textColor={styles.textBtn}
+                                   btnStyle={[styles.button]}
+                                   value={"2"}
+                                   onPress={() => { insertAtCursor('2') }}
+                               />
+                               <Button
+                                   textColor={styles.textBtn}
+                                   btnStyle={[styles.button]}
+                                   value={"3"}
+                                   onPress={() => { insertAtCursor('3') }}
+                               />
+                           </View>
+                            <View style={styles.group}>
+                                <Button
+                                    textColor={styles.textBtn}
+                                    btnStyle={[styles.button]}
+                                    value={"."}
+                                    onPress={() => { insertAtCursor(CommonOperations.Dot) }}
+                                />
+                                <Button
+                                    textColor={styles.textBtn}
+                                    btnStyle={[styles.button]}
+                                    value={"0"}
+                                    onPress={() => { insertAtCursor('0') }}
+                                />
+                                <Button
+                                    textColor={styles.textBtn}
+                                    btnStyle={[styles.button, styles.commonButton]}
+                                    value={"+"}
+                                    onPress={() => { insertAtCursor(CommonOperations.Add) }}
+                                />
+                            </View>
+                        </View>
+
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button]}
-                            value={"1"}
-                            onPress={() => { insertAtCursor('1') }}
-                        />
-                        <Button
-                            textColor={styles.textBtn}
-                            btnStyle={[styles.button]}
-                            value={"2"}
-                            onPress={() => { insertAtCursor('2') }}
-                        />
-                        <Button
-                            textColor={styles.textBtn}
-                            btnStyle={[styles.button]}
-                            value={"3"}
-                            onPress={() => { insertAtCursor('3') }}
-                        />
-                        <Button
-                            textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.commonButton]}
-                            value={"+"}
-                            onPress={() => { insertAtCursor(CommonOperations.Add) }}
-                        />
-                    </View>
-                    <View style={styles.group}>
-                        <Button
-                            textColor={styles.textBtn}
-                            btnStyle={[styles.button]}
-                            value={"."}
-                            onPress={() => { insertAtCursor(CommonOperations.Dot) }}
-                        />
-                        <Button
-                            textColor={styles.textBtn}
-                            btnStyle={[styles.button]}
-                            value={"0"}
-                            onPress={() => { insertAtCursor('0') }}
-                        />
-                        <Button
-                            textColor={styles.textBtn}
-                            btnStyle={[styles.button]}
-                            value={"♥️"}
-                            onPress={() => { alert("Comming soon.")}}
-                        />
-                        <Button
-                            textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.commonButton]}
+                            btnStyle={[styles.button, styles.commonButton, { backgroundColor: '#fe5708', height: '70%', borderRadius: 10}]}
                             value={"="}
                             onPress={evaluateExpression}
                             hint={"Solve"}

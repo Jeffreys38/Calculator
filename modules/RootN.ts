@@ -65,10 +65,20 @@ class RootN extends ExpressionTemplate {
     deleteExp(): void {
         if (this.cursorIndex === 0) {
             if (this._index.length > 0) {
-                this._index = this._index.slice(0, -1) || 'n';
+                let exp1 = this.deleteOperator(this._index);
+                if (exp1 !== null){
+                    this._index = exp1;
+                    return;
+                }
+                this._index = this._index.slice(0, -1) || '☐';
             }
         } else if (this.cursorIndex === 1) {
             if (this._radicand.length > 0) {
+                let exp2 = this.deleteOperator(this._radicand);
+                if (exp2 !== null){
+                    this._radicand = exp2;
+                    return;
+                }
                 this._radicand = this._radicand.slice(0, -1) || '☐';
             }
         }

@@ -66,16 +66,21 @@ class Fraction extends ExpressionTemplate {
     deleteExp(): void {
         if (this.cursorIndex === 0) {
             if (this._numerator.length > 0) {
-                // Case: \\times, \\modulus, \sqrt{☐}, etc. not 1 character
-                const lastChar = this._numerator[this._numerator.length - 1];
-                if (lastChar.match(/[a-zA-Z]/)) {
-                    this._numerator = this._numerator.replace(/(\\times|\\modulus)$/, '');
-                } else {
-                    this._numerator = this._numerator.slice(0, -1) || '☐'; // Remove the last character or reset to placeholder
+                let exp1 = this.deleteOperator(this._numerator);
+                if (exp1 !== null){
+                    this._numerator = exp1;
+                    console.log(this._numerator)
+                    return;
                 }
+                this._numerator = this._numerator.slice(0, -1) || '☐'; // Remove the last character or reset to placeholder
             }
         } else if (this.cursorIndex === 1) {
             if (this._denominator.length > 0) {
+                let exp2 = this.deleteOperator(this._denominator);
+                if (exp2 !== null){
+                    this._denominator = exp2;
+                    return;
+                }
                 this._denominator = this._denominator.slice(0, -1) || '☐'; // Remove the last character or reset to placeholder
             }
         }

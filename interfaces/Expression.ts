@@ -26,4 +26,16 @@ export abstract class ExpressionTemplate implements IExpressionMethods {
     abstract deleteExp(): void;
 
     abstract getLatexStringWithCursor(blink: boolean): string;
+
+    deleteOperator(exp: string | null): string | null {
+        // Case: \\times, \\modulus, \sqrt{☐}, etc. not 1 character
+        if (exp !== null) {
+            let lastChar = exp[exp.length - 1];
+            if (lastChar.match(/[a-zA-Z]/) && lastChar !== "x") {
+                exp = exp.replace(/(\\times|\\modulus)$/, '');
+                return exp;
+            }
+        }
+        return null;
+    }
 }
