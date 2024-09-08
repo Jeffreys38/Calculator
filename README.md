@@ -5,7 +5,7 @@ This is small repo for Multi Platforms Application Development Course in the sch
 
 ### Requirements
 1. OOP (4 principles)
-2. Decursive
+2. Recursive
 3. Why do we have to use interface
 
 **After you see my code in this repo, you will understand, why we have to use polymorphism of OOP, and reuseable code.** 
