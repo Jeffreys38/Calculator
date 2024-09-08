@@ -3,6 +3,13 @@ This is small repo for Multi Platforms Application Development Course in the sch
 
 **Duration**: 2 days
 
+### Requirements
+1. OOP (4 principles)
+2. Decursive
+3. Why do we have to use interface
+
+** After you see my code in this repo, you will understand, we have to use polymorphism of OOP, and reuseable code.** 
+
 ### Support
 1. Fraction
 2. Root n
