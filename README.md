@@ -15,7 +15,7 @@ This is small repo for Multi Platforms Application Development Course in the sch
 - Chemistry Calculator
 - Currency Calculator
 
-![](https://cdn.dribbble.com/userupload/5516099/file/original-4290becf8ca8dabaa352db69edf56552.png?resize=2048x1536 "Calculator Template")
+![](./template.png "Calculator Template")
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
