@@ -1,4 +1,3 @@
-import {Operations} from "@/constants/Operations";
 import {Scope} from "@/interfaces/Expression";
 
 export interface IExpressionMethods {
@@ -10,4 +9,6 @@ export interface IExpressionMethods {
      * Recursively calls to convert LatexStrings into computable expressions
      */
     calculate(scope?: Scope): number | string;
+
+    deleteOperator(exp: string | null): string | null;
 }
