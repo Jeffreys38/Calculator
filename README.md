@@ -1,5 +1,21 @@
-# Welcome to your Expo app 👋
+# Welcome to Calculator Emulator Base (React Native)👋
+This is small repo for Multi Platforms Application Development Course in the school
 
+**Duration**: 2 days
+
+### Support
+1. Fraction
+2. Root n
+3. Derivative (Coming Soon)
+
+### Functions
+- Change Theme Mode
+- Common Operations
+- Advanced Operations
+- Chemistry Calculator
+- Currency Calculator
+
+![](https://cdn.dribbble.com/userupload/5516099/file/original-4290becf8ca8dabaa352db69edf56552.png?resize=2048x1536 "Calculator Template")
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
@@ -25,15 +41,9 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+## Performance
 
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+So bad, I will edit later, this is my small first project I do.
 
 ## Learn more
 
