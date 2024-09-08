@@ -9,6 +9,7 @@ This is small repo for Multi Platforms Application Development Course in the sch
 3. Derivative (Coming Soon)
 
 ### Functions
+- Auto-scroll when expression length is greater than width of screen
 - Change Theme Mode
 - Common Operations
 - Advanced Operations
