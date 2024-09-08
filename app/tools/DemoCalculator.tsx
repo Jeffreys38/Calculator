@@ -241,26 +241,26 @@ export default function DemoCalculator() {
                         <Button
                             textColor={styles.textBtn}
                             btnStyle={[
-                                styles.button, styles.funcButton, { backgroundColor: 'red' }
+                                styles.button, , { backgroundColor: '#fe5708' }
                             ]}
                             value={"Shift"}
                             onPress={() => {setShowParams(!isShowParams)}}
                         />
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.funcButton]}
+                            btnStyle={[styles.button, ]}
                             value={"Mode"}
                             onPress={() => {}}
                         />
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.funcButton]}
+                            btnStyle={[styles.button, ]}
                             value={"("}
                             onPress={() => { insertAtCursor(CommonOperations.OpeningBracket) }}
                         />
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.funcButton]}
+                            btnStyle={[styles.button]}
                             value={")"}
                             onPress={() => { insertAtCursor(CommonOperations.ClosingBracket) }}
                         />
@@ -268,25 +268,25 @@ export default function DemoCalculator() {
                     <View style={styles.group}>
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.funcButton]}
+                            btnStyle={[styles.button, ]}
                             value={"←"}
                             onPress={() => { moveCursor('left') }}
                         />
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.funcButton]}
+                            btnStyle={[styles.button, ]}
                             value={"→"}
                             onPress={() => { moveCursor('right') }}
                         />
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.funcButton]}
+                            btnStyle={[styles.button, ]}
                             value={"↑"}
                             onPress={() => { moveCursor('up') }}
                         />
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.commonButton]}
+                            btnStyle={[styles.button, ]}
                             value={"↓"}
                             onPress={() => { moveCursor('down') }}
                         />
@@ -294,25 +294,25 @@ export default function DemoCalculator() {
                     <View style={styles.group}>
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.funcButton]}
+                            btnStyle={[styles.button, ]}
                             value={"Param"}
                             onPress={() => {insertAtCursor(CommonOperations.Param)}}
                         />
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.funcButton]}
+                            btnStyle={[styles.button, ]}
                             value={"³⁄₂"}
                             onPress={() => { insertAtCursor(AdvancedOperations.FRACTION) }}
                         />
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.funcButton]}
+                            btnStyle={[styles.button, ]}
                             value={"ⁿ√"}
                             onPress={() => { insertAtCursor(AdvancedOperations.ROOT_N) }}
                         />
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.commonButton]}
+                            btnStyle={[styles.button, ]}
                             value={"Del"}
                             onPress={deleteExpression}
                         />
@@ -338,7 +338,7 @@ export default function DemoCalculator() {
                         />
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.commonButton]}
+                            btnStyle={[styles.button, ]}
                             value={"x"}
                             onPress={() => { insertAtCursor(CommonOperations.Multiply) }}
                         />
@@ -364,7 +364,7 @@ export default function DemoCalculator() {
                         />
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.commonButton]}
+                            btnStyle={[styles.button, ]}
                             value={"-"}
                             onPress={() => { insertAtCursor(CommonOperations.Subtract) }}
                         />
@@ -375,7 +375,8 @@ export default function DemoCalculator() {
                             {
                                 flexDirection: 'column',
                                 alignItems: 'stretch',
-                                width: '74%'
+                                justifyContent: 'space-between',
+                                width: '74%',
                             }
                         ]}>
                            <View style={styles.group}>
@@ -413,7 +414,7 @@ export default function DemoCalculator() {
                                 />
                                 <Button
                                     textColor={styles.textBtn}
-                                    btnStyle={[styles.button, styles.commonButton]}
+                                    btnStyle={[styles.button, ]}
                                     value={"+"}
                                     onPress={() => { insertAtCursor(CommonOperations.Add) }}
                                 />
@@ -422,7 +423,7 @@ export default function DemoCalculator() {
 
                         <Button
                             textColor={styles.textBtn}
-                            btnStyle={[styles.button, styles.commonButton, { backgroundColor: '#fe5708', height: '70%', borderRadius: 10}]}
+                            btnStyle={[styles.button, , { backgroundColor: '#fe5708', height: '70%', borderRadius: 10}]}
                             value={"="}
                             onPress={evaluateExpression}
                             hint={"Solve"}
@@ -449,10 +450,12 @@ const createStyles = (isDark: boolean) => {
             alignItems: 'center',
             borderRadius: 100,
             backgroundColor: isDark ? '#2E2F38' : '#FFFFFF',
+            fontFamily: 'Roboto-Regular'
         },
         textBtn: {
             fontSize: 25,
             color: isDark ? 'white' : 'black',
+            fontFamily: 'Roboto-Regular'
         },
         funcButton: {
             backgroundColor: isDark ? '#4E505F' : '#D2D3DA'
@@ -473,6 +476,7 @@ const createStyles = (isDark: boolean) => {
             color: 'white',
             fontSize: 40,
             textAlign: 'right',
+            fontFamily: 'Roboto-Bold'
         },
         subText: {
             color: '#747477',
