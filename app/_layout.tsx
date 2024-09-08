@@ -28,8 +28,7 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        {/*<Stack.Screen name="(tabs)" options={{ headerShown: false }} />*/}
+      <Stack screenOptions={{headerShown: false, navigationBarHidden: true, headerTitle: "Common Calculator"}}>
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>
