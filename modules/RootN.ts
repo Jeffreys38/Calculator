@@ -42,6 +42,10 @@ class RootN extends ExpressionTemplate {
         if (cursorIndex === 0) {
             this._index = this._index.replace("☐", "") + exp;
         } else if (cursorIndex === 1) {
+            // Limit radian if greater than can appear rendering issue
+            if (this._radicand.length >= 2) {
+                return;
+            }
             this._radicand = this._radicand.replace("☐", "") + exp;
         }
         this.latexString = this.formatRootN(this._index, this._radicand);
