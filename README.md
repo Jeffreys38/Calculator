@@ -3,13 +3,6 @@ This is small repo for Multi Platforms Application Development Course in the sch
 
 **Duration**: 2 days
 
-### Requirements
-1. OOP (4 principles)
-2. Recursive
-3. Interface
-
-**After you see my code in this repo, you will understand, why we have to use polymorphism of OOP, and reuseable code.** 
-
 ### Support
 1. Fraction
 2. Root n
@@ -50,10 +43,6 @@ In the output, you'll find options to open the app in a
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Performance
-
-So bad, I will edit later, this is my small first project I do.
 
 ## Learn more
 
