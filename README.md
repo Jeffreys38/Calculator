@@ -1,59 +1,38 @@
-# Welcome to Calculator Emulator Base (React Native)👋
-This is small repo for Multi Platforms Application Development Course in the school
-
-**Duration**: 2 days
-
-### Support
-1. Fraction
-2. Root n
-3. Derivative (Coming Soon)
-
-### Functions
-- Auto-scroll when expression length is greater than width of screen
-- Change Theme Mode
-- Common Operations
-- Advanced Operations
-- Chemistry Calculator
-- Currency Calculator
-
 ![](./template.png "Calculator Template")
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<div align="center">
 
-## Get started
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/qu%E1%BB%91c-th%E1%BA%AFng-tr%C6%B0%C6%A1ng-b%E1%BB%93-7362982b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 
-1. Install dependencies
+</div>
 
-   ```bash
-   npm install
-   ```
+# Welcome to Calculator Emulator Base (React Native) 👋
 
-2. Start the app
+This is a small repository for the Multi-Platform Application Development Course in school.
 
-   ```bash
-    npx expo start
-   ```
+## 📌 Features & Support
 
-**Please open it on IOS Device, I am not still have responsive for other devices** 
+### Supported Calculations
+1. Fractions
+2. Root n
+3. Derivatives
 
-In the output, you'll find options to open the app in a
+### Core Functions
+- Auto-scroll when the expression length exceeds the screen width
+- Theme mode switching (Light/Dark)
+- Common & Advanced Mathematical Operations
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+This project is built using [Expo](https://expo.dev) and was created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Learn more
+## 🚀 Getting Started
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1️⃣ Install Dependencies
+```bash
+npm install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 2️⃣ Start the application
+```bash
+npx expo start
+```
